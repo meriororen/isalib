@@ -8,6 +8,7 @@ typedef struct ring_buffer_t {
    uint32_t size;
 } ring_buffer_t;
 
+void rb_init( ring_buffer_t *rb, uint8_t * buffer, uint32_t size);
 void rb_reset( ring_buffer_t *rb );
 uint32_t rb_bytes_free( const ring_buffer_t *rb );
 uint32_t rb_bytes_used( const ring_buffer_t *rb );
