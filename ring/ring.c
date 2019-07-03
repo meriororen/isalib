@@ -4,6 +4,14 @@
 #define ASSERT( x ) do { if (!(x)) while(1); } while(0)
 #define MIN( x, y ) ( x > y ? y : x )
 
+void rb_init( ring_buffer_t *rb, uint8_t * buffer, uint32_t size)
+{
+	rb->size = size;
+	rb->buf = &buffer[0];
+	rb->head = &buffer[0];
+	rb->tail = &buffer[0];
+}
+
 static inline uint32_t rb_buffer_size( const ring_buffer_t *rb )
 {
 	return rb->size;	
